@@ -1,25 +1,19 @@
 {
   "name": "bites",
   "version": "1.0.0",
-  "main": "server.js",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4"
-  },
-  "devDependencies": {},
+  "description": "lightweight perishable inventory tracking system",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/teampika/BITES.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/teampika/BITES/issues"
-  },
-  "homepage": "https://github.com/teampika/BITES#readme",
-  "description": ""
+  "devDependencies": {},
+  "dependencies": {
+    "pg": "^7.6.1",
+    "pg-promise": "^8.5.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "redux": "^4.0.1"
+  }
 }
