@@ -4,12 +4,17 @@
   "description": "lightweight perishable inventory tracking system",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon src/server/server.js"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
     "pg": "^7.6.1",
     "pg-promise": "^8.5.2",
     "react": "^16.6.3",
