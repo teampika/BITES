@@ -1,3 +1,13 @@
+/**
+ * ************************************
+ *
+ * @module  index.jsx
+ * @description Application Entry Point. 
+ * Hang root App off #root in index.html
+ *
+ * ************************************
+ */
+
 import React from 'react';
 import { render } from 'react-dom';
 import Root from './root';
