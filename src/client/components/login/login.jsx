@@ -18,7 +18,8 @@ class Login extends React.Component {
     this.state = {
       userEmail: '',
       userPassword: '',
-      rememberMe: false
+      rememberMe: false,
+      submitted: false
     }
     this.updateEmail = this.updateEmail.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
@@ -50,6 +51,11 @@ class Login extends React.Component {
   handleLogin(e) {
     e.preventDefault();
 
+    this.setState({
+      ...this.state,
+      submitted: true
+    })
+
     fetch('/login', {
       method: 'POST',
       headers: {
@@ -60,9 +66,13 @@ class Login extends React.Component {
         password: this.state.userPassword
       })
     })
-      .then(response => response.json())
       .then(response => {
-        console.log('cool, resp: ', response);
+        if (response.status >= 400) throw new Error('Bad response from server');
+        console.log('bad, redirect to login, resp: ', response);
+        return response.json();
+      })
+      .then(response => {
+        console.log('cool, redirect to app, resp: ', response);
       })
       .catch(err => console.error(err));
   }
@@ -77,13 +87,20 @@ class Login extends React.Component {
         <div className='login-body'>
           <form id='login-form' onSubmit={this.handleLogin}>
             <label>Email:</label><br />
-            <input type='text' value={this.state.userEmail} onChange={this.updateEmail} /><br />
+            <input type='text' value={this.state.userEmail} onChange={this.updateEmail} />
+            {this.state.submitted &&
+              !this.state.userEmail &&
+              <div className='help-block'>Username is required</div>
+            }<br />
             <label>Password:</label><br />
-            <input type='password' value={this.state.userPassword} onChange={this.updatePassword} /> <br />
+            <input type='password' value={this.state.userPassword} onChange={this.updatePassword} />
+            {this.state.submitted &&
+              !this.state.userEmail &&
+              <div className='help-block'>Password is required</div>
+            }<br />
             <input type='checkbox' value={this.state.rememberMe} onChange={this.updateRememberMe} /> Remember Me <br />
-            <input type='submit' value='Login' /><br />
+            <input id='login-submit' type='submit' value='Login' /><br />
           </form>
-          <p>Or</p>
           <Link to='/register'>Sign Up For An Account</Link>
         </div>
       </div>

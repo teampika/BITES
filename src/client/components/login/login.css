@@ -3,8 +3,7 @@ body {
   background-size: cover;
 }
 
-.login,
-.register {
+.login {
   background-image: url('../../assets/login-bg.png');
   border: 2px solid;
   border-radius: 10px;
@@ -15,65 +14,62 @@ body {
   width: 35%;
 }
 
-.login-top,
-.register-top {
-  /* border: 2px solid gold; */
+.login-top {
   font-family: 'Rasa', serif;
-  margin-top: 12.5%;
+  margin-top: 10%;
   margin-bottom: 5%;
   text-align: center;
 }
 
-.login-top-title,
-.register-top-title {
+.login-top-title {
   font-size: 5em;
   color: #000000;
   margin: 0; padding: 0;
 }
 
-.login-top-descrip,
-.register-top-descrip {
+.login-top-descrip {
   font-size: 1.5em;
-  /* font-style: italic; */
   margin: 0 auto; padding: 0;
   width: 65%;
 }
 
-.login-body,
-.register-body {
-  /* border: 2px solid red; */
+.login-body {
   margin-left: 30%;
 }
 
-#login-form label,
-#register-form label {
+#login-form label {
   font-size: 0.95em;
 }
 
 #login-form input[type='text'],
-#register-form input[type='text'],
-#login-form input[type='password'],
-#register-form input[type='password'] {
+#login-form input[type='password'] {
+  margin-bottom: 1%;
   width: 55%;
-  margin-bottom: 3%;
 }
 
-#login-form input[type='checkbox'],
-#register-form input[type='checkbox'] {
+#login-submit {
+  border: 2px solid red;
+  width: 57%;
+  display: block;
+}
+
+.help-block {
+  color: red;
+  font-size: 0.8em;
+}
+
+#login-form input[type='checkbox'] {
   margin-bottom: 2%;
 }
 
-#login-form input[type='submit'],
-#register-form input[type='submit'] {
+#login-form input[type='submit'] {
   width: 57%;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-.login-body p,
-.login-body a,
-.register-body p,
-.register-body a {
-  margin: 2%;
+.login-body a {
+  margin: 5%;
   text-align: center;
   width: 50%;
 }
