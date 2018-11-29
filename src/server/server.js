@@ -3,7 +3,13 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { addVendor, getVendors } = require('./controllers/vendorControllers');
-const { createSalesOrder, getSalesOrders, addItemsToSalesOrder } = require('./controllers/salesOrderController');
+
+const {
+  createSalesOrder,
+  getSalesOrders,
+  addItemsToSalesOrder,
+  getSaleOrderDetails,
+} = require('./controllers/salesOrderController');
 const {
   createItem,
   getItems,
@@ -12,13 +18,18 @@ const {
 } = require('./controllers/itemController');
 
 app.use(bodyParser.json());
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
-const sendRespose = (req, res) => res.status(200).json(res.locals.data);
+const sendRespose = (req, res) => {
+  console.log('INSIDE SEND RESPONSE')
+  if (res.locals.data) res.status(200).json(res.locals.data);
+  else res.status(200).send();
+};
 
 app.get('/vendors',
   getVendors,
@@ -48,6 +59,10 @@ app.get('/salesOrder',
 app.post('/salesOrder',
   createSalesOrder,
   addItemsToSalesOrder,
+  sendRespose);
+
+app.post('/saleOrderDetails',
+  getSaleOrderDetails,
   sendRespose);
 
 
