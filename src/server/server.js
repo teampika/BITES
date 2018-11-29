@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { addVendor, getVendors } = require('./controllers/vendorControllers');
-const { createSalesOrder, getSalesOrders } = require('./controllers/salesOrderController');
+const { createSalesOrder, getSalesOrders, addItemsToSalesOrder } = require('./controllers/salesOrderController');
 const {
   createItem,
   getItems,
@@ -47,6 +47,7 @@ app.get('/salesOrder',
 
 app.post('/salesOrder',
   createSalesOrder,
+  addItemsToSalesOrder,
   sendRespose);
 
 

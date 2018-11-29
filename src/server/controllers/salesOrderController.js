@@ -12,9 +12,22 @@ module.exports = {
         return next(err);
       });
   },
-  // addItemsToSalesOrder(req, res, next) {
+  addItemsToSalesOrder(req, res, next) {
+    const { items } = req.body;
+    const salesOrderId = res.locals.data.id;
+    const arrOfItemPromises = [];
+    // items.forEach((item) => {
+    //   console.log('ITEM', item);
+    //   db.none('INSERT INTO sales_order_items(sales_order_id, items_id, adjusted_price, quantity) VALUES($1, $2, $3, $4)', [salesOrderId, item.id, item.price, item.quantity]);
+    // });
 
-  // }
+    items.forEach((item) => {
+      arrOfItemPromises.push(new Promise((resolve, reject) => {
+        db.none('INSERT INTO sales_order_items(sales_order_id, items_id, adjusted_price, quantity) VALUES($1, $2, $3, $4)', [salesOrderId, item.id, item.price, item.quantity]);
+      }));
+    });
+
+  },
   getSalesOrders(req, res, next) {
     db.any('SELECT * FROM sales_orders')
       .then((salesOrders) => {
