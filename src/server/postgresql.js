@@ -1,6 +1,6 @@
 const connection = 'postgres://ibozpohp:Uzn5QSUV-Ry6MhWyNjMJBMZWtHckR1rT@baasu.db.elephantsql.com:5432/ibozpohp';
 
-const pgp = require('pg-promise')(/*options*/);
+const pgp = require('pg-promise')(/* options */);
 
 const db = pgp(connection);
 
