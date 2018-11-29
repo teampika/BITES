@@ -23,3 +23,14 @@ const Root = (props) => (
 )
 
 export default Root;
+// import CompanyPage from './client/CompanyPage';
+// import Inventory from './client/Inveontory';
+
+// const root = () => (
+//   <div>
+//     <CompanyPage />
+//     <Inventory />
+//   </div>
+// );
+
+// export default root;
