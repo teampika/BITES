@@ -8,9 +8,14 @@
  */
 
 import React from 'react';
+import CompanyPage from './client/CompanyPage';
+import Inventory from './client/Inveontory';
 
 const root = () => (
-  <h1>What a beautiful day to code</h1>
-)
+  <div>
+    <CompanyPage />
+    <Inventory />
+  </div>
+);
 
 export default root;
