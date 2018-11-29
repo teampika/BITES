@@ -26,7 +26,6 @@ module.exports = {
         db.none('INSERT INTO sales_order_items(sales_order_id, items_id, adjusted_price, quantity) VALUES($1, $2, $3, $4)', [salesOrderId, item.id, item.price, item.quantity]);
       }));
     });
-
   },
   getSalesOrders(req, res, next) {
     db.any('SELECT * FROM sales_orders')

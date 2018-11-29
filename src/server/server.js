@@ -11,6 +11,11 @@ const {
   updateItemPrice,
 } = require('./controllers/itemController');
 
+const {
+  signup,
+  login,
+} = require('./controllers/users');
+
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -49,6 +54,12 @@ app.post('/salesOrder',
   createSalesOrder,
   addItemsToSalesOrder,
   sendRespose);
+
+app.post('/signup',
+  signup);
+
+app.post('/login',
+  login);
 
 
 app.use((err, req, res, next) => {
