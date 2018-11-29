@@ -1,0 +1,79 @@
+body {
+  background-image: url('../../assets/bg-foods.jpg');
+  background-size: cover;
+}
+
+.login,
+.register {
+  background-image: url('../../assets/login-bg.png');
+  border: 2px solid;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.8);
+  margin: 10% auto;
+  height: 70vh;
+  opacity: 50%;
+  width: 35%;
+}
+
+.login-top,
+.register-top {
+  /* border: 2px solid gold; */
+  font-family: 'Rasa', serif;
+  margin-top: 12.5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.login-top-title,
+.register-top-title {
+  font-size: 5em;
+  color: #000000;
+  margin: 0; padding: 0;
+}
+
+.login-top-descrip,
+.register-top-descrip {
+  font-size: 1.5em;
+  /* font-style: italic; */
+  margin: 0 auto; padding: 0;
+  width: 65%;
+}
+
+.login-body,
+.register-body {
+  /* border: 2px solid red; */
+  margin-left: 30%;
+}
+
+#login-form label,
+#register-form label {
+  font-size: 0.95em;
+}
+
+#login-form input[type='text'],
+#register-form input[type='text'],
+#login-form input[type='password'],
+#register-form input[type='password'] {
+  width: 55%;
+  margin-bottom: 3%;
+}
+
+#login-form input[type='checkbox'],
+#register-form input[type='checkbox'] {
+  margin-bottom: 2%;
+}
+
+#login-form input[type='submit'],
+#register-form input[type='submit'] {
+  width: 57%;
+  margin-top: 5%;
+}
+
+.login-body p,
+.login-body a,
+.register-body p,
+.register-body a {
+  margin: 2%;
+  text-align: center;
+  width: 50%;
+}
