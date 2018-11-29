@@ -21,6 +21,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -33,8 +34,16 @@ module.exports = {
         test: /\.(css)$/,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(jpg|png)$/,
+        exclude: /node_modules/,
+        use: ['file-loader', 'image-webpack-loader']
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
