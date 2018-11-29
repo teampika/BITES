@@ -3,32 +3,38 @@ body {
   background-size: cover;
 }
 
-.login {
+.login-box {
   background-image: url('../../assets/login-bg.png');
   border: 2px solid;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.8);
   margin: 10% auto;
-  height: 70vh;
+  height: 60vh;
   opacity: 50%;
-  width: 35%;
+  width: 30%;
+}
+
+.login-content-box {
+  height: 80%;
 }
 
 .login-top {
   font-family: 'Rasa', serif;
   margin-top: 10%;
-  margin-bottom: 5%;
+  margin-bottom: 2.5%;
   text-align: center;
 }
 
 .login-top-title {
-  font-size: 5em;
+  font-size: 5vw;
   color: #000000;
-  margin: 0; padding: 0;
+  margin-top: 0; 
+  margin-bottom: 0;
+  padding-top: 1vw;
 }
 
 .login-top-descrip {
-  font-size: 1.5em;
+  font-size: 1.25vw;
   margin: 0 auto; padding: 0;
   width: 65%;
 }
@@ -38,7 +44,7 @@ body {
 }
 
 #login-form label {
-  font-size: 0.95em;
+  font-size: 0.95vw;
 }
 
 #login-form input[type='text'],
@@ -48,7 +54,6 @@ body {
 }
 
 #login-submit {
-  border: 2px solid red;
   width: 57%;
   display: block;
 }
@@ -59,6 +64,7 @@ body {
 }
 
 #login-form input[type='checkbox'] {
+  font-size: 1vw;
   margin-bottom: 2%;
 }
 
@@ -72,4 +78,11 @@ body {
   margin: 5%;
   text-align: center;
   width: 50%;
+}
+
+.login-footer {
+  width: 57%;
+  padding-left: 1.25vw
+  /* margin: 1vh auto; */
+  /* text-align: center; */
 }

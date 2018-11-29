@@ -3,15 +3,19 @@ body {
   background-size: cover;
 }
 
-.register {
+.register-box {
   background-image: url('../../assets/login-bg.png');
   border: 2px solid;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.8);
   margin: 10% auto;
-  height: 70vh;
+  height: 60vh;
   opacity: 50%;
-  width: 35%;
+  width: 30%;
+}
+
+.register-content-box {
+  height: 80%;
 }
 
 .register-top {
@@ -22,21 +26,23 @@ body {
 }
 
 .register-top-title {
-  font-size: 5em;
+  font-size: 5vw;
   color: #000000;
-  margin: 0; padding: 0;
+  margin-top: 0; 
+  margin-bottom: 0;
+  padding-top: 1vw;
 }
 
 .register-top-descrip {
-  font-size: 1.5em;
+  font-size: 1.25vw;
   margin: 0 auto; padding: 0;
   width: 65%;
 }
 
 /**/
 .register-body {
-  /* border: 2px solid red; */
   margin-left: 10%;
+  margin-top: 2.5vh;
   width: 80%;
 }
 
@@ -47,12 +53,14 @@ body {
 .register-body-left {
   display: inline-block;
   margin-right: 2%;
-  padding: 5% 3%;
-  width: 45%
+  padding: 0 3%;
+  width: 45%;
+  vertical-align: top;
 }
 .register-body-right {
   display: inline-block;
-  width: 45%
+  width: 45%;
+  vertical-align: top;
 }
 
 #register-form label {
@@ -61,7 +69,7 @@ body {
 
 #register-form input[type='text'],
 #register-form input[type='password'] {
-  margin-bottom: 1%;
+  margin-bottom: 0.25vh;
   width: 90%;
 }
 
@@ -72,7 +80,7 @@ body {
 #register-submit {
   width: 57%;
   display: block;
-  margin: auto;
+  margin: 1.5vh auto;
 }
 
 .register-body a {
@@ -83,6 +91,6 @@ body {
 
 .register-footer {
   width: 57%;
-  margin: auto;
+  margin: 1vh auto;
   text-align: center;
 }
