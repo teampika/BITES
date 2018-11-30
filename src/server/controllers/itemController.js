@@ -13,7 +13,7 @@ module.exports = {
       });
   },
   createItem(req, res, next) {
-    db.one('INSERT INTO items(name, description, defaultPrice) VALUES ($1, $2, $3) RETURNING *', [req.body.name, req.body.description, req.body.defaultPrice])
+    db.one('INSERT INTO items(name, description, default_price) VALUES ($1, $2, $3) RETURNING *', [req.body.name, req.body.description, req.body.defaultPrice])
       .then((item) => {
         res.locals.data = item;
         return next();

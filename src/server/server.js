@@ -3,7 +3,13 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { addVendor, getVendors } = require('./controllers/vendorControllers');
-const { createSalesOrder, getSalesOrders, addItemsToSalesOrder } = require('./controllers/salesOrderController');
+
+const {
+  createSalesOrder,
+  getSalesOrders,
+  addItemsToSalesOrder,
+  getSaleOrderDetails,
+} = require('./controllers/salesOrderController');
 const {
   createItem,
   getItems,
@@ -11,45 +17,71 @@ const {
   updateItemPrice,
 } = require('./controllers/itemController');
 
+const {
+  signup,
+  // login,
+} = require('./controllers/users');
+
+const {
+  addBusiness,
+  // getBusinesses,
+} = require('./controllers/addBusiness');
+
 app.use(bodyParser.json());
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
-const sendRespose = (req, res) => res.status(200).json(res.locals.data);
+const sendRespose = (req, res) => {
+  console.log('INSIDE RESPONSE', res.locals.data);
+  res.json(res.locals.data);
+};
 
 app.get('/vendors',
   getVendors,
-  sendRespose);
+  sendResponse);
 
 app.post('/vendors',
   addVendor,
-  sendRespose);
+  sendResponse);
 
 app.get('/items',
   getItems,
-  sendRespose);
+  sendResponse);
 
 app.post('/items',
   createItem,
-  sendRespose);
+  sendResponse);
 
 app.patch('/items',
   updateItemDescription,
   updateItemPrice,
-  sendRespose);
+  sendResponse);
 
 app.get('/salesOrder',
   getSalesOrders,
-  sendRespose);
+  sendResponse);
 
 app.post('/salesOrder',
   createSalesOrder,
   addItemsToSalesOrder,
-  sendRespose);
+  sendResponse);
 
+app.post('/signup',
+  addBusiness,
+  signup,
+  sendResponse);
+
+// app.post('/login',
+//   login,
+//   sendResponse);
+
+app.post('/saleOrderDetails',
+  getSaleOrderDetails,
+  sendRespose);
 
 app.use((err, req, res, next) => {
   res.status(400).send(err);

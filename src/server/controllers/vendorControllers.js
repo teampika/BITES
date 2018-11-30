@@ -13,10 +13,12 @@ module.exports = {
       });
   },
   getVendors(req, res, next) {
+    console.log('THIS IS VENDORS');
     db.any('SELECT * FROM vendors')
       .then((data) => {
+        console.log(data);
         res.locals.data = data;
-        return next();
+        next();
       })
       .catch((err) => {
         console.log('ERROR', err);
