@@ -17,6 +17,16 @@ const {
   updateItemPrice,
 } = require('./controllers/itemController');
 
+const {
+  signup,
+  // login,
+} = require('./controllers/users');
+
+const {
+  addBusiness,
+  // getBusinesses,
+} = require('./controllers/addBusiness');
+
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
@@ -32,33 +42,42 @@ const sendRespose = (req, res) => {
 
 app.get('/vendors',
   getVendors,
-  sendRespose);
+  sendResponse);
 
 app.post('/vendors',
   addVendor,
-  sendRespose);
+  sendResponse);
 
 app.get('/items',
   getItems,
-  sendRespose);
+  sendResponse);
 
 app.post('/items',
   createItem,
-  sendRespose);
+  sendResponse);
 
 app.patch('/items',
   updateItemDescription,
   updateItemPrice,
-  sendRespose);
+  sendResponse);
 
 app.get('/salesOrder',
   getSalesOrders,
-  sendRespose);
+  sendResponse);
 
 app.post('/salesOrder',
   createSalesOrder,
   addItemsToSalesOrder,
-  sendRespose);
+  sendResponse);
+
+app.post('/signup',
+  addBusiness,
+  signup,
+  sendResponse);
+
+// app.post('/login',
+//   login,
+//   sendResponse);
 
 app.post('/saleOrderDetails',
   getSaleOrderDetails,
