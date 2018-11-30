@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Login from './client/components/login/login';
 import Register from './client/components/signup/signup'
+// import SalesOrder from './client/components/salesOrder/SalesOrder';
 
 const Root = (props) => (
   <Router>

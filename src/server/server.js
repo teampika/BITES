@@ -26,9 +26,8 @@ app.use((req, res, next) => {
 });
 
 const sendRespose = (req, res) => {
-  console.log('INSIDE SEND RESPONSE')
-  if (res.locals.data) res.status(200).json(res.locals.data);
-  else res.status(200).send();
+  console.log('INSIDE RESPONSE', res.locals.data);
+  res.json(res.locals.data);
 };
 
 app.get('/vendors',
@@ -64,7 +63,6 @@ app.post('/salesOrder',
 app.post('/saleOrderDetails',
   getSaleOrderDetails,
   sendRespose);
-
 
 app.use((err, req, res, next) => {
   res.status(400).send(err);
