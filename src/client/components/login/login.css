@@ -1,0 +1,75 @@
+body {
+  background-image: url('../../assets/bg-foods.jpg');
+  background-size: cover;
+}
+
+.login {
+  background-image: url('../../assets/login-bg.png');
+  border: 2px solid;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.8);
+  margin: 10% auto;
+  height: 70vh;
+  opacity: 50%;
+  width: 35%;
+}
+
+.login-top {
+  font-family: 'Rasa', serif;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.login-top-title {
+  font-size: 5em;
+  color: #000000;
+  margin: 0; padding: 0;
+}
+
+.login-top-descrip {
+  font-size: 1.5em;
+  margin: 0 auto; padding: 0;
+  width: 65%;
+}
+
+.login-body {
+  margin-left: 30%;
+}
+
+#login-form label {
+  font-size: 0.95em;
+}
+
+#login-form input[type='text'],
+#login-form input[type='password'] {
+  margin-bottom: 1%;
+  width: 55%;
+}
+
+#login-submit {
+  border: 2px solid red;
+  width: 57%;
+  display: block;
+}
+
+.help-block {
+  color: red;
+  font-size: 0.8em;
+}
+
+#login-form input[type='checkbox'] {
+  margin-bottom: 2%;
+}
+
+#login-form input[type='submit'] {
+  width: 57%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.login-body a {
+  margin: 5%;
+  text-align: center;
+  width: 50%;
+}

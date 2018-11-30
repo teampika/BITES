@@ -13,8 +13,13 @@ const {
 
 const {
   signup,
-  login,
+  // login,
 } = require('./controllers/users');
+
+const {
+  addBusiness,
+  // getBusinesses,
+} = require('./controllers/addBusiness');
 
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -23,43 +28,46 @@ app.use((req, res, next) => {
   next();
 });
 
-const sendRespose = (req, res) => res.status(200).json(res.locals.data);
+const sendResponse = (req, res) => res.status(200).json(res.locals.data);
 
 app.get('/vendors',
   getVendors,
-  sendRespose);
+  sendResponse);
 
 app.post('/vendors',
   addVendor,
-  sendRespose);
+  sendResponse);
 
 app.get('/items',
   getItems,
-  sendRespose);
+  sendResponse);
 
 app.post('/items',
   createItem,
-  sendRespose);
+  sendResponse);
 
 app.patch('/items',
   updateItemDescription,
   updateItemPrice,
-  sendRespose);
+  sendResponse);
 
 app.get('/salesOrder',
   getSalesOrders,
-  sendRespose);
+  sendResponse);
 
 app.post('/salesOrder',
   createSalesOrder,
   addItemsToSalesOrder,
-  sendRespose);
+  sendResponse);
 
 app.post('/signup',
-  signup);
+  addBusiness,
+  signup,
+  sendResponse);
 
-app.post('/login',
-  login);
+// app.post('/login',
+//   login,
+//   sendResponse);
 
 
 app.use((err, req, res, next) => {
